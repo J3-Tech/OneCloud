@@ -26,7 +26,7 @@ vorpal
         var dbx = new Dropbox({ accessToken: config.services.dropbox[0].accessToken });
         recursive(args.source, function (err, files) {
             files.forEach(function(file){
-                fs.readFile(file, (err, data) => {
+                fs.readFile(file, function(err, data) {
                     dbx.filesUpload({
                         autorename: false,
                         contents: data,
