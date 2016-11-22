@@ -18,6 +18,7 @@
   "homepage": "https://github.com/labzone/OneCloud#readme",
   "dependencies": {
     "dropbox": "^2.4.0",
+    "jsonfile": "^2.4.0",
     "recursive-readdir": "^2.1.0",
     "upath": "^0.2.0",
     "vorpal": "^1.11.4"

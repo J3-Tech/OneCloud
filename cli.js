@@ -3,6 +3,9 @@ var config = require('./config.json');
 var Dropbox = require('dropbox');
 var recursive = require('recursive-readdir');
 var upath = require('upath');
+var jsonfile = require('jsonfile')
+const fs = require('fs');
+var log = 'mapping.json'
 
 vorpal
     .command('info', 'get defined cloud services\' informations')
@@ -18,22 +21,30 @@ vorpal
         .then(function(r){
             console.log(r);
         })*/
+        vorpal.log('Copy files');
+        var entries = [];
         var dbx = new Dropbox({ accessToken: config.services.dropbox[0].accessToken });
         recursive(args.source, function (err, files) {
             files.forEach(function(file){
-                dbx.filesUpload({
-                  autorename: false,
-                  contents: 'test',
-                  path: args.destination + upath.toUnix(file)
-                })
-                .then(function(response) {
-                    console.log(response);
-                })
-                .catch(function(error) {
-                    console.log(error);
+                fs.readFile(file, (err, data) => {
+                    dbx.filesUpload({
+                        autorename: false,
+                        contents: data,
+                        path: args.destination + upath.toUnix(file),
+                        mode: {
+                            '.tag': 'overwrite'
+                        }
+                    })
+                    .then(function(response) {
+                        vorpal.log(file + ' uploaded');
+                    })
+                    .catch(function(error) {
+                        vorpal.log(error);
+                    });
                 });
             });
         });
+        callback();
     });
 
 vorpal
