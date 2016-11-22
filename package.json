@@ -1,0 +1,25 @@
+{
+  "name": "onecloud",
+  "version": "1.0.0",
+  "description": "one-cloud",
+  "main": "OneCloud.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/labzone/OneCloud.git"
+  },
+  "author": "Dickriven Chellemboyee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/labzone/OneCloud/issues"
+  },
+  "homepage": "https://github.com/labzone/OneCloud#readme",
+  "dependencies": {
+    "dropbox": "^2.4.0",
+    "recursive-readdir": "^2.1.0",
+    "upath": "^0.2.0",
+    "vorpal": "^1.11.4"
+  }
+}

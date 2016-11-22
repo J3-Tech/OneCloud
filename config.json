@@ -1,0 +1,14 @@
+{
+    "services": {
+        "dropbox":[
+            {
+                "accessToken": ""
+            }
+        ],
+        "box": [
+            {
+                "accessToken": ""
+            }
+        ]
+    }
+}
