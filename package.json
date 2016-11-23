@@ -17,9 +17,13 @@
   },
   "homepage": "https://github.com/labzone/OneCloud#readme",
   "dependencies": {
+    "box-node-sdk": "^1.1.0",
     "dropbox": "^2.4.0",
+    "google-auth-library": "^0.9.10",
+    "googleapis": "^14.2.0",
     "jsonfile": "^2.4.0",
     "recursive-readdir": "^2.1.0",
+    "sqlite3": "^3.1.8",
     "upath": "^0.2.0",
     "vorpal": "^1.11.4"
   }
